@@ -1,0 +1,35 @@
+{
+  "name": "gulp-cjsx",
+  "version": "0.0.0",
+  "description": "'Coffee-react module for GulpJs'",
+  "author": "Matt Smith <mtscout6@gmail.com> (http://softwarebymatt.com)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mtscout6/gulp-cjsx.git"
+  },
+  "keywords": [
+    "gulp",
+    "cjsx",
+    "react",
+    "coffee",
+    "coffeescript",
+    "coffee-script"
+  ],
+  "license": "Apache 2",
+  "bugs": {
+    "url": "https://github.com/mtscout6/gulp-cjsx/issues"
+  },
+  "homepage": "https://github.com/mtscout6/gulp-cjsx",
+  "dependencies": {
+    "gulp": "~3.8.5",
+    "coffee-react": "~0.4.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.20.1",
+    "chai": "~1.9.1"
+  }
+}
