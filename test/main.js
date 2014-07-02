@@ -59,6 +59,36 @@ describe('gulp-cjsx', function() {
       };
     });
 
+    it('should pass along file if isNull()', function(done) {
+      var file = {
+        isNull: function() { return true; }
+      };
+
+      cjsxPlugin({})
+        .on('error', done)
+        .on('data', function(newFile) {
+          newFile.should.equal(file); done();
+        })
+        .write(file);
+    });
+
+    it('should error if input is stream', function(done) {
+      var input = {
+        isNull: function() { return false; },
+        isStream: function() { return true; }
+      };
+
+      cjsxPlugin({})
+        .on('error', function(err) {
+          err.message.should.equal('gulp-cjsx: Streaming not supported');
+          done();
+        })
+        .on('data', function(newFile) {
+          throw new Error("no file should have been emitted!");
+        })
+        .write(input);
+    });
+
     it('should concat two files', function(done) {
       var filepath = "/home/contra/test/file.coffee";
       var contents = new Buffer("a = 2");
