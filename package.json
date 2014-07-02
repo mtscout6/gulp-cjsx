@@ -18,6 +18,7 @@
     "coffee-script",
     "coffeescript",
     "gulp",
+    "gulpfriendly",
     "gulpplugin",
     "jsx",
     "react"
