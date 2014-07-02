@@ -1,4 +1,6 @@
-# Gulp-Cjsx (In progress) [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] ![Dependencies][dependencies-image]
+# Gulp-Cjsx (In progress)
+
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] ![Dependencies][dependencies-image]
 
 Transforms [coffee-react][coffee-react] 'cjsx' files to JavaScript
 
