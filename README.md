@@ -1,4 +1,4 @@
-# Gulp-Cjsx (In progress)
+# Gulp-Cjsx (In progress) [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] ![Dependencies][dependencies-image]
 
 Transforms [coffee-react][coffee-react] 'cjsx' files to JavaScript
 
@@ -33,3 +33,14 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+[npm-url]: https://npmjs.org/package/gulp-cjsx
+[npm-image]: http://img.shields.io/npm/v/gulp-cjsx.svg
+
+[travis-url]: https://travis-ci.org/mtscout6/gulp-cjsx
+[travis-image]: https://travis-ci.org/mtscout6/gulp-cjsx.svg?branch=master
+
+[coveralls-url]: https://coveralls.io/r/mtscout6/gulp-cjsx
+[coveralls-image]: https://img.shields.io/coveralls/mtscout6/gulp-cjsx.svg?branch=master
+
+[dependencies-image]: https://david-dm.org/mtscout6/gulp-cjsx.png
