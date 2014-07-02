@@ -1,4 +1,4 @@
-var cjsxPlugin  = require('../');
+var cjsxPlugin = require('../');
 var should     = require('should');
 var cjsx       = require('coffee-react');
 var gutil      = require('gulp-util');
@@ -80,7 +80,8 @@ describe('gulp-cjsx', function() {
 
       cjsxPlugin({})
         .on('error', function(err) {
-          err.message.should.equal('gulp-cjsx: Streaming not supported');
+          err.plugin.should.equal('gulp-cjsx');
+          err.message.should.equal('Streaming not supported');
           done();
         })
         .on('data', function(newFile) {
@@ -101,13 +102,13 @@ describe('gulp-cjsx', function() {
         .write(createFile(filepath, contents));
     });
 
-    it('should emit errors correctly', function(done) {
+    it('should emit parsing errors correctly', function(done) {
       var filepath = "/home/contra/test/file.coffee";
       var contents = new Buffer("if a()\r\n  then huh");
 
       cjsxPlugin({bare: true})
         .on('error', function(err) {
-          err.message.indexOf(filepath).should.not.equal(-1);
+          err.message.should.equal('unexpected then');
           done();
         })
         .on('data', function(newFile) {

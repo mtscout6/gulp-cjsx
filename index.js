@@ -6,10 +6,14 @@ var applySourceMap = require('vinyl-sourcemaps-apply');
 var path           = require('path');
 var merge          = require('merge');
 
+function error(err, options) {
+  return new gutil.PluginError('gulp-cjsx', err, options);
+};
+
 module.exports = function(opt) {
   function modifyFile(file) {
     if (file.isNull()) return this.emit('data', file); // pass along
-    if (file.isStream()) return this.emit('error', new Error('gulp-cjsx: Streaming not supported'));
+    if (file.isStream()) return this.emit('error', error('Streaming not supported'));
 
     var data;
     var str  = file.contents.toString('utf8');
@@ -29,7 +33,7 @@ module.exports = function(opt) {
     try {
       data = cjsx.compile(str, options);
     } catch (err) {
-      return this.emit('error', new Error(err));
+      return this.emit('error', error(err));
     }
 
     if (data.v3SourceMap && file.sourceMap) {
