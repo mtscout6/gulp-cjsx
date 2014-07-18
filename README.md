@@ -1,6 +1,6 @@
 # Gulp-Cjsx
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] ![Dependencies][dependencies-image]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
 Transforms [coffee-react][coffee-react] 'cjsx' files to JavaScript
 
@@ -45,4 +45,5 @@ limitations under the License.
 [coveralls-url]: https://coveralls.io/r/mtscout6/gulp-cjsx
 [coveralls-image]: https://img.shields.io/coveralls/mtscout6/gulp-cjsx.svg?branch=master
 
-[dependencies-image]: https://david-dm.org/mtscout6/gulp-cjsx.png
+[dependencies-url]: https://www.versioneye.com/user/projects/53c6e2d96c18d523e2000220
+[dependencies-image]: https://www.versioneye.com/user/projects/53c6e2d96c18d523e2000220/badge.svg
