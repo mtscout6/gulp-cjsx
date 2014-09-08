@@ -1,4 +1,4 @@
-var es             = require('event-stream');
+var through        = require('through2').obj;
 var cjsx           = require('coffee-react');
 var gutil          = require('gulp-util');
 var Buffer         = require('buffer').Buffer;
@@ -47,5 +47,5 @@ module.exports = function(opt) {
     this.emit('data', file);
   };
 
-  return es.through(modifyFile);
+  return through(modifyFile);
 };

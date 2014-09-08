@@ -1,4 +1,4 @@
-var cjsxPlugin = require('../');
+var cjsxPlugin = require('..\\');
 var should     = require('should');
 var cjsx       = require('coffee-react');
 var gutil      = require('gulp-util');
@@ -91,19 +91,19 @@ describe('gulp-cjsx', function() {
     });
 
     it('should concat two files', function(done) {
-      var filepath = "/home/contra/test/file.coffee";
+      var filepath = "\\home\\contra\\test\\file.coffee";
       var contents = new Buffer("a = 2");
       var opts = {bare: true};
       var expected = cjsx.compile(String(contents), opts);
 
       cjsxPlugin(opts)
         .on('error', done)
-        .on('data', this.testData(expected, "/home/contra/test/file.js", done))
+        .on('data', this.testData(expected, "\\home\\contra\\test\\file.js", done))
         .write(createFile(filepath, contents));
     });
 
     it('should emit parsing errors correctly', function(done) {
-      var filepath = "/home/contra/test/file.coffee";
+      var filepath = "\\home\\contra\\test\\file.coffee";
       var contents = new Buffer("if a()\r\n  then huh");
 
       cjsxPlugin({bare: true})
@@ -119,15 +119,15 @@ describe('gulp-cjsx', function() {
 
     var tests = [{
       type: '*.coffee',
-      source: 'test/fixtures/grammar.coffee',
+      source: 'test\\fixtures\\grammar.coffee',
       sourceFile: 'grammar.coffee',
-      dest: 'test/fixtures/grammar.js',
+      dest: 'test\\fixtures\\grammar.js',
       destFile: 'grammar.js'
     }, {
       type: '*.cjsx',
-      source: 'test/fixtures/react.cjsx',
+      source: 'test\\fixtures\\react.cjsx',
       sourceFile: 'react.cjsx',
-      dest: 'test/fixtures/react.js',
+      dest: 'test\\fixtures\\react.js',
       destFile: 'react.js'
     }]
 
@@ -205,42 +205,42 @@ describe('gulp-cjsx', function() {
     });
 
     it('should compile a literate file', function(done) {
-      var filepath = "test/fixtures/journo.litcoffee";
+      var filepath = "test\\fixtures\\journo.litcoffee";
       var contents = new Buffer(fs.readFileSync(filepath));
       var opts = {literate: true};
       var expected = cjsx.compile(String(contents), opts);
 
       cjsxPlugin(opts)
         .on('error', done)
-        .on('data', this.testData(expected, "test/fixtures/journo.js", done))
+        .on('data', this.testData(expected, "test\\fixtures\\journo.js", done))
         .write(createFile(filepath, contents));
     });
 
     it('should compile a literate file (implicit)', function(done) {
-      var filepath = "test/fixtures/journo.litcoffee";
+      var filepath = "test\\fixtures\\journo.litcoffee";
       var contents = new Buffer(fs.readFileSync(filepath));
       var expected = cjsx.compile(String(contents), {literate: true});
 
       cjsxPlugin()
         .on('error', done)
-        .on('data', this.testData(expected, "test/fixtures/journo.js", done))
+        .on('data', this.testData(expected, "test\\fixtures\\journo.js", done))
         .write(createFile(filepath, contents));
     });
 
     it('should compile a literate file (with bare)', function(done) {
-      var filepath = "test/fixtures/journo.litcoffee";
+      var filepath = "test\\fixtures\\journo.litcoffee";
       var contents = new Buffer(fs.readFileSync(filepath));
       var opts = {literate: true, bare: true};
       var expected = cjsx.compile(String(contents), opts);
 
       cjsxPlugin(opts)
         .on('error', done)
-        .on('data', this.testData(expected, "test/fixtures/journo.js", done))
+        .on('data', this.testData(expected, "test\\fixtures\\journo.js", done))
         .write(createFile(filepath, contents));
     });
 
     it('should compile a literate file with source map', function(done) {
-      var filepath = "test/fixtures/journo.litcoffee";
+      var filepath = "test\\fixtures\\journo.litcoffee";
       var contents = new Buffer(fs.readFileSync(filepath));
       var expected = cjsx.compile(String(contents), {
         literate: true,
@@ -254,11 +254,11 @@ describe('gulp-cjsx', function() {
       stream
         .pipe(cjsxPlugin({literate: true}))
           .on('error', done)
-          .on('data', this.testData(expected, "test/fixtures/journo.js", done))
+          .on('data', this.testData(expected, "test\\fixtures\\journo.js", done))
     });
 
     it('should compile a literate file with bare and with source map', function(done) {
-      var filepath = "test/fixtures/journo.litcoffee";
+      var filepath = "test\\fixtures\\journo.litcoffee";
       var contents = new Buffer(fs.readFileSync(filepath));
       var expected = cjsx.compile(String(contents), {
         literate: true,
@@ -273,7 +273,7 @@ describe('gulp-cjsx', function() {
       stream
         .pipe(cjsxPlugin({literate: true, bare: true}))
           .on('error', done)
-          .on('data', this.testData(expected, "test/fixtures/journo.js", done));
+          .on('data', this.testData(expected, "test\\fixtures\\journo.js", done));
     });
   });
 });
