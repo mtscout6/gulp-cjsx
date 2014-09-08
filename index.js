@@ -11,7 +11,7 @@ function error(err, options) {
 };
 
 module.exports = function(opt) {
-  function modifyFile(file) {
+  function modifyFile(file, enc, callback) {
     if (file.isNull()) return this.emit('data', file); // pass along
     if (file.isStream()) return this.emit('error', error('Streaming not supported'));
 
@@ -44,7 +44,7 @@ module.exports = function(opt) {
     }
 
     file.path = dest;
-    this.emit('data', file);
+    callback(null, file)
   };
 
   return through(modifyFile);
