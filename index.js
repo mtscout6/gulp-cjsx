@@ -13,8 +13,8 @@ function error(err, options) {
 
 module.exports = function(opt) {
   function modifyFile(file, enc, callback) {
-    if (file.isNull()) return this.emit('data', file); // pass along
-    if (file.isStream()) return this.emit('error', error('Streaming not supported'));
+    if (file.isNull()) return callback(null, file); // pass along
+    if (file.isStream()) return callback(error('Streaming not supported'));
 
     var data;
     var str  = file.contents.toString('utf8');
@@ -34,7 +34,7 @@ module.exports = function(opt) {
     try {
       data = cjsx.compile(str, options);
     } catch (err) {
-      return this.emit('error', error(err));
+      callback(error(err))
     }
 
     if (data.v3SourceMap && file.sourceMap) {
