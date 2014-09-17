@@ -34,7 +34,7 @@ module.exports = function(opt) {
     try {
       data = cjsx.compile(str, options);
     } catch (err) {
-      callback(error(err))
+      return callback(error(err))
     }
 
     if (data.v3SourceMap && file.sourceMap) {
