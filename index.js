@@ -1,3 +1,4 @@
+var isWin          = /^win/.test(process.platform);
 var through        = require('through2').obj;
 var cjsx           = require('coffee-react');
 var gutil          = require('gulp-util');
