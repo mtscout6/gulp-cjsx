@@ -68,13 +68,20 @@ describe('gulp-cjsx', function() {
       var file = {
         isNull: function() { return true; }
       };
-
-      cjsxPlugin({})
-        .on('error', done)
+      timesCalled = 0;
+      waitForTwoCalls = function(){
+        timesCalled++;
+        if(timesCalled === 2)
+          done();
+      }
+      cjsxStream = cjsxPlugin({})
+        .on('error', waitForTwoCalls)
         .on('data', function(newFile) {
-          newFile.should.equal(file); done();
-        })
-        .write(file);
+          newFile.should.equal(file); 
+          waitForTwoCalls();
+        });
+      cjsxStream.write(file);
+      cjsxStream.write(file);
     });
 
     it('should error if input is stream', function(done) {
