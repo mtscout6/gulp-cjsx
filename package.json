@@ -1,6 +1,6 @@
 {
   "name": "gulp-cjsx",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "'Coffee-react module for GulpJs'",
   "author": "Matt Smith <mtscout6@gmail.com> (http://softwarebymatt.com)",
   "main": "index.js",
