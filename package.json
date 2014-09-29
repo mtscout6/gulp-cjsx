@@ -34,8 +34,8 @@
     "gulp-sourcemaps": "^1.1.0",
     "gulp-util": "^3.0.0",
     "merge": "^1.2.0",
-    "vinyl-sourcemaps-apply": "~0.1.1",
-    "through2": "~0.6.1"
+    "through2": "^1.1.1",
+    "vinyl-sourcemaps-apply": "~0.1.1"
   },
   "devDependencies": {
     "chai": "~1.9.1",
