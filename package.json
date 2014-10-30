@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/mtscout6/gulp-cjsx",
   "dependencies": {
-    "coffee-react": "^1.0.2",
+    "coffee-react": "^2.0.0",
     "gulp": "~3.8.5",
     "gulp-sourcemaps": "^1.1.0",
     "gulp-util": "^3.0.0",
