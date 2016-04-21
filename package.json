@@ -29,17 +29,16 @@
   },
   "homepage": "https://github.com/mtscout6/gulp-cjsx",
   "dependencies": {
-    "coffee-react": "^3.0.1",
-    "gulp": "^3.8.11",
-    "gulp-sourcemaps": "^1.5.1",
+    "coffee-react": "^5.0.0",
     "gulp-util": "^3.0.4",
     "merge": "^1.2.0",
-    "through2": "^1.1.1",
-    "vinyl-sourcemaps-apply": "^0.1.4"
+    "through2": "^2.0.1",
+    "vinyl-sourcemaps-apply": "^0.2.1"
   },
   "devDependencies": {
     "chai": "^2.2.0",
     "coveralls": "^2.11.2",
+    "gulp-sourcemaps": "^1.5.1",
     "istanbul": "^0.3.11",
     "lodash": "^3.6.0",
     "mocha": "^2.2.1",
