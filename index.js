@@ -27,7 +27,7 @@ module.exports = function(opt) {
       sourceRoot:     false,
       literate:       /\.(litcoffee|coffee\.md)$/.test(file.path),
       filename:       file.path,
-      sourceFiles:    [path.basename(file.path)],
+      sourceFiles:    [file.relative],
       generatedFile:  path.basename(dest)
     }, opt);
 
